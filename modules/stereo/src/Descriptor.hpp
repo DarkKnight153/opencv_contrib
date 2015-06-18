@@ -44,9 +44,10 @@
 *   The interface contains the main descriptors that will be implemented in the descriptor class			      *
 *																												  *
 \******************************************************************************************************************/
-#pragma once
+
 #include "precomp.hpp"
 #include <stdint.h>
+#define UNUSED( x ) ( &reinterpret_cast< const int& >( x ) )
 #ifndef _OPENCV_DESCRIPTOR_HPP_
 #define _OPENCV_DESCRIPTOR_HPP_ 
 #ifdef __cplusplus
@@ -65,17 +66,17 @@ namespace cv
 			//Implementation for computing the Census transform on the given image
 			void applyCensusOnImage(uint8_t * image, int height, int width,uint32_t * &dist);
 			//Implementation of the census transform using a top and bottom padding
-			void applyCensusOnImageWithPadding(uint8_t * image1, uint8_t *image2, int heightTrimmed, int height, int width, int padding_top, int padding_bottom, uint32_t * &dist, uint32_t * &dist2);
+			void applyCensusOnImageWithPadding(uint8_t * image1, uint8_t *image2, int height, int width, int padding_top, int padding_bottom, uint32_t * &dist, uint32_t * &dist2);
 			//Implementation of a census transform which is taking into account just the some pixels from the census kernel thus allowing for larger block sizes
-			void applySparseCensusOnImageWithPadding(uint8_t * image1, uint8_t *image2, int heightTrimmed, int height, int width, int padding_top, int padding_bottom, uint32_t * &dist, uint32_t * &dist2);
+			void applySparseCensusOnImageWithPadding(uint8_t * image1, uint8_t *image2, int height, int width, int padding_top, int padding_bottom, uint32_t * &dist, uint32_t * &dist2);
 			//Implementation of a modified census transform which is also taking into account the variation to the mean of the window not just the center pixel
 			void applyMCTWithMeanVariation(uint32_t *integralL, uint32_t *integralR , uint8_t * image1, uint8_t *image2, int heightTrimmed, int height, int width, int padding_top, int padding_bottom, uint32_t * &dist, uint32_t * &dist2);
 			//Modified census which is memorizing for each pixel 2 bits and includes a tolerance to the pixel comparison
 			void applyMCT(uint8_t * image1, uint8_t *image2, int heightTrimmed, int height, int width, int padding_top, int padding_bottom,int t, uint32_t * &dist, uint32_t * &dist2);
 			//The classical center symetric census
-			void applyCenterSimetricCensus(uint8_t * image1, uint8_t *image2, int heightTrimmed, int height, int width, int padding_top, int padding_bottom, uint32_t * &dist, uint32_t * &dist2);
+			void applyCenterSimetricCensus(uint8_t * image1, uint8_t *image2, int height, int width, int padding_top, int padding_bottom, uint32_t * &dist, uint32_t * &dist2);
 			//A modified version of cs census which is comparing the a pixel with its correspondent from the after the center
-			void applyModifiedCenterSimetricCensus(uint8_t * image1, uint8_t *image2, int heightTrimmed, int height, int width, int padding_top, int padding_bottom, uint32_t * &dist, uint32_t * &dist2);
+			void applyModifiedCenterSimetricCensus(uint8_t * image1, uint8_t *image2, int height, int width, int padding_top, int padding_bottom, uint32_t * &dist, uint32_t * &dist2);
 			//The brief binary descriptor
 			void applyBrifeDescriptor(uint8_t * image1, uint8_t *image2, int heightTrimmed, int height, int width, int padding_top, int padding_bottom, uint32_t * &dist, uint32_t * &dist2);
 			//The classical Rank Transform

@@ -59,6 +59,11 @@ Descriptor::Descriptor(int k)
 void Descriptor::applyCensusOnImage_SSE(uint8_t * image, int height, int width, uint32_t * &dist)
 {
 	//TO DO
+	UNUSED( image );
+	UNUSED( height );
+	UNUSED( width );
+	UNUSED( dist );
+	
 }
 //Implementation for computing the Census transform on the given image
 void Descriptor::applyCensusOnImage(uint8_t * image, int height, int width, uint32_t * &dist)
@@ -92,7 +97,7 @@ void Descriptor::applyCensusOnImage(uint8_t * image, int height, int width, uint
 	}
 }
 //Implementation of the census transform using a top and bottom padding
-void Descriptor::applyCensusOnImageWithPadding(uint8_t * image1, uint8_t *image2, int heightTrimmed, int height, int width, int padding_top, int padding_bottom, uint32_t * &dist, uint32_t * &dist2)
+void Descriptor::applyCensusOnImageWithPadding(uint8_t * image1, uint8_t *image2, int height, int width, int padding_top, int padding_bottom, uint32_t * &dist, uint32_t * &dist2)
 {
 	int n2 = (this->kernelSize - 1) / 2;
 
@@ -137,6 +142,19 @@ void Descriptor::applyCensusOnImageWithPadding(uint8_t * image1, uint8_t *image2
 void Descriptor::applyMCTWithMeanVariation(uint32_t *integralL, uint32_t *integralR, uint8_t * image1, uint8_t *image2, int heightTrimmed, int height, int width, int padding_top, int padding_bottom, uint32_t * &dist, uint32_t * &dist2)
 {
 	//TO DO
+	//marked the variables in order to avoid warnings
+	UNUSED( integralL );
+	UNUSED( integralR );
+	UNUSED( image1 );
+	UNUSED( image2 );
+	UNUSED( heightTrimmed );
+	UNUSED( height );
+	UNUSED( width );
+	UNUSED( padding_top );
+	UNUSED( padding_bottom );
+	UNUSED( dist );
+	UNUSED( dist2 );
+
 }
 //Modified census which is memorizing for each pixel 2 bits and includes a tolerance to the pixel comparison
 void Descriptor::applyMCT(uint8_t * image1, uint8_t *image2, int heightTrimmed, int height, int width, int padding_top, int padding_bottom, int t, uint32_t * &dist, uint32_t * &dist2)
@@ -254,14 +272,13 @@ void Descriptor::applyMCT(uint8_t * image1, uint8_t *image2, int heightTrimmed, 
 	}
 }
 //the modified cs census
-void Descriptor::applyModifiedCenterSimetricCensus(uint8_t * image1, uint8_t *image2, int heightTrimmed, int height, int width, int padding_top, int padding_bottom, uint32_t * &dist, uint32_t * &dist2)
+void Descriptor::applyModifiedCenterSimetricCensus(uint8_t * image1, uint8_t *image2, int height, int width, int padding_top, int padding_bottom, uint32_t * &dist, uint32_t * &dist2)
 {
 	int n2 = (this->kernelSize - 1) / 2;
 
 //#pragma omp parallel for
 	for (int i = padding_top + n2; i <= height - padding_bottom - n2; i++)//sterg + 1 pt ca in c
 	{
-		int rWidth = i * width;
 		int distV = (i - padding_top) * width;
 		for (int j = n2; j <= width - n2; j++)
 		{
@@ -298,14 +315,13 @@ void Descriptor::applyModifiedCenterSimetricCensus(uint8_t * image1, uint8_t *im
 }
 
 //The classical center symetric census
-void Descriptor::applyCenterSimetricCensus(uint8_t * image1, uint8_t *image2, int heightTrimmed, int height, int width, int padding_top, int padding_bottom, uint32_t * &dist, uint32_t * &dist2)
+void Descriptor::applyCenterSimetricCensus(uint8_t * image1, uint8_t *image2, int height, int width, int padding_top, int padding_bottom, uint32_t * &dist, uint32_t * &dist2)
 {
 	int n2 = (this->kernelSize - 1) / 2;
 
 //#pragma omp parallel for
 	for (int i = padding_top + n2; i <= height - padding_bottom - n2; i++)//sterg + 1 pt ca in c
 	{
-		int rWidth = i * width;
 		int distV = (i - padding_top) * width;
 		for (int j = n2; j <= width - n2; j++)
 		{
@@ -356,15 +372,35 @@ void Descriptor::applyCenterSimetricCensus(uint8_t * image1, uint8_t *image2, in
 //The brief binary descriptor
 void Descriptor::applyBrifeDescriptor(uint8_t * image1, uint8_t *image2, int heightTrimmed, int height, int width, int padding_top, int padding_bottom, uint32_t * &dist, uint32_t * &dist2)
 {
-
+	//TO DO
+	//marked the variables in order to avoid warnings
+	UNUSED( image1 );
+	UNUSED( image2 );
+	UNUSED( heightTrimmed );
+	UNUSED( height );
+	UNUSED( width );
+	UNUSED( padding_top );
+	UNUSED( padding_bottom );
+	UNUSED( dist );
+	UNUSED( dist2 );
 }
 //The classical Rank Transform
 void  Descriptor::applyRTDescriptor(uint8_t * image1, uint8_t *image2, int heightTrimmed, int height, int width, int padding_top, int padding_bottom, uint32_t * &dist, uint32_t * &dist2)
 {
-
+	//TO DO
+	//marked the variables in order to avoid warnings
+	UNUSED( image1 );
+	UNUSED( image2 );
+	UNUSED( heightTrimmed );
+	UNUSED( height );
+	UNUSED( width );
+	UNUSED( padding_top );
+	UNUSED( padding_bottom );
+	UNUSED( dist );
+	UNUSED( dist2 );
 }
 //The census descriptor that allows block sizes larger than clasical
-void Descriptor::applySparseCensusOnImageWithPadding(uint8_t * image1, uint8_t *image2, int heightTrimmed, int height, int width, int padding_top, int padding_bottom, uint32_t * &dist, uint32_t * &dist2)
+void Descriptor::applySparseCensusOnImageWithPadding(uint8_t * image1, uint8_t *image2, int height, int width, int padding_top, int padding_bottom, uint32_t * &dist, uint32_t * &dist2)
 {
 	int n2 = (this->kernelSize - 1) / 2;
 

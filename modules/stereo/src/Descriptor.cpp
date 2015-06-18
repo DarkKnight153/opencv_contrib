@@ -66,7 +66,7 @@ void Descriptor::applyCensusOnImage_SSE(uint8_t * image, int height, int width, 
 	
 }
 //Implementation for computing the Census transform on the given image
-void Descriptor::applyCensusOnImage(uint8_t * image, int height, int width, uint32_t * &dist)
+void Descriptor::applyCensusOnImage(uint8_t *image, int height, int width, uint32_t * &dist)
 {
 	int n2 = (this->kernelSize - 1) / 2;
 

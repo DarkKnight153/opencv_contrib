@@ -47,7 +47,7 @@
 
 #include "precomp.hpp"
 #include <stdint.h>
-#define UNUSED( x ) ( &reinterpret_cast< const int& >( x ) )
+#define UNUSED( x ) ( &reinterpret_cast< const char& >( x ) )
 #ifndef _OPENCV_DESCRIPTOR_HPP_
 #define _OPENCV_DESCRIPTOR_HPP_ 
 #ifdef __cplusplus

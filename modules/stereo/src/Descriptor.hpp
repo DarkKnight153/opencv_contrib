@@ -75,7 +75,7 @@ namespace cv
 			void applyMCT(uint8_t * image1, uint8_t *image2, int heightTrimmed, int height, int width, int padding_top, int padding_bottom,int t, uint32_t * &dist, uint32_t * &dist2);
 			//The classical center symetric census
 			void applyCenterSimetricCensus(uint8_t * image1, uint8_t *image2, int height, int width, int padding_top, int padding_bottom, uint32_t * &dist, uint32_t * &dist2);
-			//A modified version of cs census which is comparing the a pixel with its correspondent from the after the center
+			//A modified version of cs census which is comparing the a pixel with its correspondent from the after the center 
 			void applyModifiedCenterSimetricCensus(uint8_t * image1, uint8_t *image2, int height, int width, int padding_top, int padding_bottom, uint32_t * &dist, uint32_t * &dist2);
 			//The brief binary descriptor
 			void applyBrifeDescriptor(uint8_t * image1, uint8_t *image2, int heightTrimmed, int height, int width, int padding_top, int padding_bottom, uint32_t * &dist, uint32_t * &dist2);

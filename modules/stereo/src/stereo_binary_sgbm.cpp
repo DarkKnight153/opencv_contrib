@@ -633,7 +633,7 @@ namespace cv
 
 							_minL0 = _mm_min_epi16(_minL0, _mm_srli_si128(_minL0, 8));
 							_mm_storel_epi64((__m128i*)&minLr[0][xm], _minL0);
-						}
+						 }
 						else
 #endif
 						{

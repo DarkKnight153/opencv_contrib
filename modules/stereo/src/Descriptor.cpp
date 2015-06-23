@@ -59,11 +59,11 @@ Descriptor::Descriptor(int k)
 void Descriptor::applyCensusOnImage_SSE(uint8_t * image, int height, int width, uint32_t * &dist)
 {
 	//TO DO
-	/*UNUSED( image );
+	UNUSED( image );
 	UNUSED( height );
 	UNUSED( width );
 	UNUSED( dist );
-	*/
+	
 }
 //Implementation for computing the Census transform on the given image
 void Descriptor::applyCensusOnImage(uint8_t *image, int height, int width, uint32_t * &dist)

@@ -398,7 +398,7 @@ namespace cv
 							d = p + n - 2 * sad[mind] + std::abs(p - n);
 							dptr[y*dstep] = (short)(((ndisp - mind - 1 + mindisp) * 256 + (d != 0 ? (p - n) * 256 / d : 0) + 15) >> 4);
 							costptr[y*coststep] = sad[mind];
-						}
+						 }
 					}
 				}
 			}
